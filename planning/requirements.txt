@@ -1,0 +1,10 @@
+This document is used for defining requirements for the application.
+
+Application Description: fluffcut will be a multi-user rss aggregation
+service. Users will be able to create an account, and define rss feeds
+that should be collected on a regular basis. They can then access the
+service through web and mobile applications to browse through their
+rss collections. Users will also have the option to share articles
+to other social networks easily.
+
+
