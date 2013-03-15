@@ -90,23 +90,46 @@ Ideas to expand
    read. Ones not tagged marked to be tagged. Getting this base functionaliy
    in sooner rather than later might be a good idea. Done too late it may
    be an impossible task to complete.
+ - Subscribe to more than just RSS? What about Twitter accounts, Facebook
+   pages and other data streams?
 
-Read/Unread
- - Do we need read/unread tracking? With my own use, I followed some pretty
-   active feeds like Hacker News where there was almost always something
-   unread. I'd as often as not end up with a few hundred unread after a busy
-   weekend and then just mark as all read.
 
-   That was extra work. Also when opening the mobile app it would display
-   a list with their read count, and I'd always select all items. If we're
-   not worrying about read/unread the the user experience could be open the
-   app and immediately be shown the list of items.
+Read / Unread
+ - I had brought up the idea of removing this feature, thinking it might be
+   uneccessary. Research has shown me that people who used Reader used this a
+   lot, so not going to remove it.
 
-   On the backend we can still keep track of clicks, but now clients would be
-   less chatty with the api, meaning less resources required to run the
-   service as well. 
 
-   If you think about it, Twitter doesn't keep an unread. Facebook doesn't. I
-   think the whole unread thing probably evolved from email which the major
-   internet communication of the time Reader was introduced. I think following
-   the UX of social networks might be a better path to follow.
+Applications
+With the above in mind, I believe there are two applications that will need to
+be build to support the API.
+
+1: Data Collector: This would be how data gets in to the data store. This is
+either a giant polling engine, or what is built to support Superfeedr. I still
+like the Superfeedr idea as I think it offloads a lot of the complexity of
+building and maintaining information gathering. 
+
+2: API Provider: This is what reads the data based on calls from web url
+endpoints. A lot of design needs to go in here, and needs to be the most
+robust piece of the architecture.
+
+Design work needed:
+
+Authentication - Need a way to manage authentication and create users. Users
+need to be accessible through the API somehow. So a method needs to be set up
+for user creation and then some sort of variables set for requests which
+identify both the requesting application and the user it's acting on behalf
+of. The user identifier of course needs to be unique per application.
+
+Web Mockup - Not taking fancy end game HTML5 this is what will go live. More
+of an application skeleton that can be walked through to identify what the API
+will need to provide.
+
+API and Data Structures - Use the web mockup to create the API which will also
+definte the required data structures. Will just use dummy data for this.
+
+Data Collector - Once the data structures are set, we can start work on
+pulling data. As an alternative to Superfeedr there is also the YQL
+feednormalizer
+http://www.yqlblog.net/blog/2013/03/07/yql-feednormalizer-table/
+This would mean polling, a lot. 
