@@ -7,4 +7,81 @@ service through web and mobile applications to browse through their
 rss collections. Users will also have the option to share articles
 to other social networks easily.
 
+* items below are not well put together yet, mainly
+* a brain dump of ideas
+
+Feed Views
+ - All
+ - Individual Feed View
+ - Marked items (ie: starred items in Reader)
+ - Short view with expandable descriptions like Reader
+   nothing fancy like Feedly, Flipboard or Current. They
+   already do that well. Just info from the feed itself.
+
+ Items
+ - Mark item read
+ - Mark item unread
+ - Tracking of click vs mark read, possibly to be used
+   for global "what people are reading".
+ - Share via Twitter, Facebook and Email. ( others? ) Non-intrusive,
+   the option to share is a button set or something similar on the
+   item view, no popups or anything like that.
+
+Authentication
+ - Use other authentication sources instead of rolling own. Google,
+   Yahoo, Facebook, Twitter the big 4 to start. 
+
+Platform
+ - Eat your own dogfood style platform. In other words create
+   an API and then build website and mobile app that uses the API
+ - Design API rather than try to duplicate the old Reader one. Yes
+   lots of people are asking for that as a feature from new apps.
+   I think already going with a more global auth scheme is going to
+   make that difficult. Also if an api is built correctly then it 
+   should be easy to use for development. We're not talking about
+   a huge feature list.
+ - Should only ever read from an RSS provider once. May make sense to
+   look into using tools like YQL or Superfeedr* instead of hitting
+   RSS feeds directly, at least at first.
+ - All open source, unless of course someone wants to pay for this
+   to be written and closed, always be open to options with dollars.
+ - Thinking maybe api provider in Go**, website in Python/Tornado. I know
+   next to nothing about mobile development so not sure what to suggest
+   there. 
+ - MongoDB might be a good choice for storage here. I know the complaints
+   about durability and such, but it's useful for building things quick
+   and the data isn't exactly bank records. Square, Github, Parse, Stripe,
+   FourSquare, eBay... all use MongoDB. 
+ - Hosting, I generally prefer Rackspace over Amazon if for no other
+   reason than you usually get more processor at the mini machine levels.
+   I spend about $25 a month for the two servers I run there now and one
+   of them will likely be used to support this.
+
+* Superfeedr specializes in this kind of thing. As long as we only want
+  a feed once, it shouldn't be too expensive? They do push as well, which
+  would only be for the benefit of users.
+
+** Go because I've been looking for an excuse to use it.
+
+Money
+ - Is there a way to make money off of this? May be able to sell
+   advertising. Pro plan for users who don't want ads? Are there paid
+   features that can be added on top of this? Straight up fee for all
+   users? Maybe free for all, but if you want the ability to mark items
+   as read you need a paid account... $ how ?
+
+Ideas to expand
+ - What about commenting built in for each item? Sort of like taking
+   Digg, Reddit, Hacker News and building it into an RSS system. Makes
+   it more social. Opt out would need to be an option ( Never show me
+   comments. )
+ - Trending/Popular. We can track what people are clicking on custom feeds
+   for what's popular can be built in. Maybe even what's popular with people
+   with similar interests.
+ - Main mean human curation for classifying feeds. That would need to be
+   anonymous, ie: just a list of feeds that the application is configured to
+   read. Ones not tagged marked to be tagged. Getting this base functionaliy
+   in sooner rather than later might be a good idea. Done too late it may
+   be an impossible task to complete.
+
 
