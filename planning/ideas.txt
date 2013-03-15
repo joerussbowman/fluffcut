@@ -69,6 +69,13 @@ Money
    features that can be added on top of this? Straight up fee for all
    users? Maybe free for all, but if you want the ability to mark items
    as read you need a paid account... $ how ?
+ - We could offer sites the ability to own their feed. They could then use
+   that to plug their Twitter account and Facebook page. Possibly an
+   advertising outlet. We could also provide extra information to them, like
+   80% of consumers of your feed also subscribe to this other feed as well.
+   People that clicked on this link also clicked on these other links in other
+   thread. Once again, anonymous information, never provide user details just
+   activity demographics.
 
 Ideas to expand
  - What about commenting built in for each item? Sort of like taking
@@ -84,4 +91,22 @@ Ideas to expand
    in sooner rather than later might be a good idea. Done too late it may
    be an impossible task to complete.
 
+Read/Unread
+ - Do we need read/unread tracking? With my own use, I followed some pretty
+   active feeds like Hacker News where there was almost always something
+   unread. I'd as often as not end up with a few hundred unread after a busy
+   weekend and then just mark as all read.
 
+   That was extra work. Also when opening the mobile app it would display
+   a list with their read count, and I'd always select all items. If we're
+   not worrying about read/unread the the user experience could be open the
+   app and immediately be shown the list of items.
+
+   On the backend we can still keep track of clicks, but now clients would be
+   less chatty with the api, meaning less resources required to run the
+   service as well. 
+
+   If you think about it, Twitter doesn't keep an unread. Facebook doesn't. I
+   think the whole unread thing probably evolved from email which the major
+   internet communication of the time Reader was introduced. I think following
+   the UX of social networks might be a better path to follow.
