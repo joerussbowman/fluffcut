@@ -21,6 +21,7 @@ Feed Views
  Items
  - Mark item read
  - Mark item unread
+ - Star/Favorite an item
  - Tracking of click vs mark read, possibly to be used
    for global "what people are reading".
  - Share via Twitter, Facebook and Email. ( others? ) Non-intrusive,
@@ -120,10 +121,15 @@ need to be accessible through the API somehow. So a method needs to be set up
 for user creation and then some sort of variables set for requests which
 identify both the requesting application and the user it's acting on behalf
 of. The user identifier of course needs to be unique per application.
+. Since we may add OAuth / Facebook Connect / Twitter login options, we could use
+the user's email address as key, so if the user forgets his credentials he may
+always login again using a social network account.
 
 Web Mockup - Not taking fancy end game HTML5 this is what will go live. More
 of an application skeleton that can be walked through to identify what the API
 will need to provide.
+. A first raw mockup of the reading interface built with Bootstrap is available
+here: http://jetstrap.com/share/e57538a061/reading
 
 API and Data Structures - Use the web mockup to create the API which will also
 definte the required data structures. Will just use dummy data for this.
