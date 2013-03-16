@@ -19,6 +19,14 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "login will happen here")
 }
 
+// The landing point for oauth2 callbacks from providers. Got this
+// from starting to set up for Google login, realized I like this idea
+// of a callback point for each type of authentication technology. Should
+// make for easier to read code.
+func Oauth2CallbackHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "landing point for oauth2callbacks")
+}
+
 func main() {
 	r := mux.NewRouter()
 	r.StrictSlash(true)
