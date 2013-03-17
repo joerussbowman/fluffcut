@@ -59,3 +59,7 @@ _testmain.go
 
 # fccfg files are private config files
 *.fccfg
+
+# apive = the name of the virtualenv built for the api
+apive
+
